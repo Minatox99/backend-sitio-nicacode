@@ -28,8 +28,9 @@ export const handler: Handler = async (event: HandlerEvent) => {
     from: process.env.EMAIL_USER,
     to: 'info@nicacodes.com',
     subject: 'Formulario de nuevo cliente',
-    text: `Datos del cliente: email: ${data.email}\nMensaje: ${data.tel}`,
+    text: `Datos del cliente:\nEmail: ${data.email}\nTeléfono: ${data.tel}\n`
   };
+  
 
   try {
     await transporter.sendMail(mailOptions);
